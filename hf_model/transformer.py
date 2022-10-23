@@ -24,6 +24,7 @@ TRAIN_TSV = 'exp/data/cnn_dailymail/sent_delete_sent/train.tsv'
 # text_token_ids = tokenizer(text)
 # text_token_ids = tokenizer.convert_ids_to_tokens(text_tokens.input_ids)
 # print(text_token_ids)
+model = AutoModel.from_pretrained("prajjwal1/bert-tiny")
 
 def read_train_data():
     '''Read train.csv, find the max scored reference summary
