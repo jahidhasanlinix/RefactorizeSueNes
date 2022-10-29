@@ -18,13 +18,13 @@ sequence_2 = "In the past year that relationship has healed."
 
 # print special token ids, Added the Special Word [CLS] at the begining and 
 # Special word [SEP] at the end
-model_inputs0 = tokenizer(sequence_0)
-print(model_inputs0["input_ids0"])
-tokens= tokenizer.tokenize(sequence_0)
-ids = tokenizer.convert_tokens_to_ids(tokens)
-print(ids)
-print(tokenizer.decode(model_inputs0["input_ids"]))
-print(tokenizer.decode(ids))
+# model_inputs0 = tokenizer(sequence_0)
+# print(model_inputs0["input_ids0"])
+# tokens= tokenizer.tokenize(sequence_0)
+# ids = tokenizer.convert_tokens_to_ids(tokens)
+# print(ids)
+# print(tokenizer.decode(model_inputs0["input_ids"]))
+# print(tokenizer.decode(ids))
 
 
 # The tokenizer will automatically add any model specific separators (i.e. <CLS> and <SEP>) and tokens to
