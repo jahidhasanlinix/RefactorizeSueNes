@@ -8,7 +8,7 @@ dataset = load_dataset("jobayerahmmed/cnn_dailymail_suenes")
 # tokenized_datasets = dataset.map(tokenize_function, batched=True)
 
 tokenizer = AutoTokenizer.from_pretrained("cnn_dailymail_suenes")
-model = AutoModelForSequenceClassification.from_pretrained("bert-base-cased-finetuned-mrpc", num_labels=1)
+model = AutoModelForSequenceClassification.from_pretrained("cnn_dailymail_suenes", num_labels=1)
 
 classes = ["not paraphrase", "is paraphrase"]
 
