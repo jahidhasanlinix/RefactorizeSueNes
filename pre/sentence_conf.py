@@ -24,7 +24,7 @@ dataset_sizes = {"cnn_dailymail":311971}
 # }
 
 dataset_sizes_w_split = {# new for sentence-level mutation
-    "cnn_dailymail":{'train':28711, 'test':1149},
+    "cnn_dailymail":{'train':31200, 'test':3900, 'validation': 3900}, # train: 10%, test & validation: 1.25% 
 }
 
 #======== data loading parameters 
@@ -34,7 +34,7 @@ dataset_sizes_w_split = {# new for sentence-level mutation
 # dataset_names = ["billsum", "scientific_papers", "cnn_dailymail", "big_patent"] 
 dataset_names = ["cnn_dailymail"] 
 
-splits = ['train'] 
+splits = ['train', 'test', 'validation'] 
 # splits = ['train', 'test'] # We only need the train split. We skip validation and test.
 # note that billsum has no validation set
 
