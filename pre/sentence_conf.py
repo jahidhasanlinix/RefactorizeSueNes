@@ -14,7 +14,7 @@ dataset_features = {"cnn_dailymail": ['article', 'highlights'],
 # dataset_sizes = {"billsum":23455, "scientific_papers":215913, "newsroom":1212740, 
                 #  "cnn_dailymail":311971, "big_patent":1341362}
 
-dataset_sizes = {"cnn_dailymail":31197}
+dataset_sizes = {"cnn_dailymail":311971}
 
 # dataset_sizes_w_split = {# new for sentence-level mutation
 #     "billsum":{'train':18949, 'test':3269},   
