@@ -5,7 +5,7 @@
     - pip install -r requirements.txt
     - pip install pandas
     - pip install transformers
-    - pip install datasets==1.0.2
+    - pip install datasets
     - rm seq2seq_trainer.py
     - wget https://github.com/huggingface/transformers/blob/main/examples/legacy/seq2seq/seq2seq_trainer.py
     - pip install rouge_score
