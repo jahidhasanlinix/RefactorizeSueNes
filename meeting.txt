@@ -55,3 +55,16 @@ Step 2:
 - Not classification,, use RegressionModel - hugging face transformer fine tuning regression
 - Bert is binary, use “numlevel=1” will work.
 - Bert tokenizer use.
+
+10/31/22
+=====================
+Compile use: regression model, use loss for regression model
+- [No: Cross entropy for classification problem]
+- Feedback: [Push to repo class one]
+- First use a loss function for regression (this problem for regression) rather classification
+Step 4:
+- Don’t publish raw data, we just publish model there.
+- Fork SueNes, push the new code to the repo folder
+- Test models trained in your way. 
+- Wrap your code and model into a function that others can use it
+- Load the model (Use PyTorch + TF- 2 files total need to push on our repo )
