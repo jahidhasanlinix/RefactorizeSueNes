@@ -23,3 +23,7 @@ checkpoint
 exp
 pre/~
 output
+
+!cnn_dailymail_suenes/test.tsv
+!cnn_dailymail_suenes/train.tsv
+!cnn_dailymail_suenes/validation.tsv
