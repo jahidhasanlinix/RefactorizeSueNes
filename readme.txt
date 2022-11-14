@@ -5,6 +5,7 @@
     - pip install -r requirements.txt
     - python -m spacy download en_core_web_sm
     - pip install transformers datasets scikit-learn
+    - pip install pyyaml h5py  # Required to save models in HDF5 format
 
 # Part 1: download and generate training data
     - mkdir exp exp/data exp/result
