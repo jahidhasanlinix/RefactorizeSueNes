@@ -27,3 +27,6 @@ output
 !cnn_dailymail_suenes/test.tsv
 !cnn_dailymail_suenes/train.tsv
 !cnn_dailymail_suenes/validation.tsv
+
+hf_model/pt_test_trainer
+hf_model/tf_test_trainer

@@ -4,7 +4,7 @@
     - source .venv/bin/activate
     - pip install -r requirements.txt
     - python -m spacy download en_core_web_sm
-    - deactivate
+    - pip install transformers datasets scikit-learn
 
 # Part 1: download and generate training data
     - mkdir exp exp/data exp/result
