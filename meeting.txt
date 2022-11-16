@@ -68,3 +68,7 @@ Step 4:
 - Test models trained in your way. 
 - Wrap your code and model into a function that others can use it
 - Load the model (Use PyTorch + TF- 2 files total need to push on our repo )
+
+11/16/22
+====================
+- folder: transformer
