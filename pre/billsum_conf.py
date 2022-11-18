@@ -84,5 +84,5 @@ sent_end = string.punctuation
 neg_pos_ratio = 5 
 
 # methods used to generate negative samples 
-methods = ["cross", "word_add", "word_delete", "word_replace"] 
+methods = ["word_delete"] 
 # methods = ["word_add", "word_delete", "word_replace"] 

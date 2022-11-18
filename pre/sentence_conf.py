@@ -11,32 +11,23 @@ dataset_features = {"cnn_dailymail": ['article', 'highlights'],
     "dryrun":[]
     }
 
-# dataset_sizes = {"billsum":23455, "scientific_papers":215913, "newsroom":1212740, 
-                #  "cnn_dailymail":311971, "big_patent":1341362}
-
-dataset_sizes = {"cnn_dailymail":311971}
-
-# dataset_sizes_w_split = {# new for sentence-level mutation
-#     "billsum":{'train':18949, 'test':3269},   
-#     "cnn_dailymail":{'train':287113, 'test':11490},
-#     "big_patent":{'train':1207222, 'test':67072},
-#     "scientific_papers":{'train':203037, 'test':6440},
-# }
+dataset_sizes = {
+    "cnn_dailymail":311971, 
+    "big_patent":1341362
+}
 
 dataset_sizes_w_split = {# new for sentence-level mutation
-    "cnn_dailymail":{'train':31200, 'test':3900, 'validation': 3900}, # train: 10%, test & validation: 1.25% 
+    "cnn_dailymail":{'train':287113, 'test':11490, 'validation': 13368},
+    "big_patent":{'train':1207222, 'test':67072, 'validation': 67068},
 }
 
 #======== data loading parameters 
 
 # Must match their names in TFDS 
 # dataset_name = "dryrun" 
-# dataset_names = ["billsum", "scientific_papers", "cnn_dailymail", "big_patent"] 
-dataset_names = ["cnn_dailymail"] 
+dataset_names = ["cnn_dailymail", "big_patent"] 
 
 splits = ['train', 'test', 'validation'] 
-# splits = ['train', 'test'] # We only need the train split. We skip validation and test.
-# note that billsum has no validation set
 
 #========= data output/dumping parameters 
 

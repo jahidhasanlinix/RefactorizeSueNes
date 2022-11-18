@@ -541,13 +541,13 @@ def sample_generation(conf):
 
 if __name__ == "__main__":
     # Generate samples from CNN DM using configurations in cnndm_conf.py 
-    _ = sample_generation("cnndm_conf")
+    # _ = sample_generation("cnndm_conf")
 
     # Generate samples from Billsum
     _ = sample_generation("billsum_conf")
 
     # Generate samples from Scientific papers
-    _ = sample_generation("scientific_papers_conf")
+    # _ = sample_generation("scientific_papers_conf")
 
     # Generate samples from big patents
-    _ = sample_generation("big_patents_conf")
+    # _ = sample_generation("big_patents_conf")

@@ -22,7 +22,7 @@ Data is generated from CNN Daily Mail dataset using
 Only `sentence delete` technique, defined in 
 [SueNes paper](https://aclanthology.org/2022.naacl-main.175/),
 is used for data generation.
-From the generated data, 10% is used for training and 2.5% is for validation.
+From the generated data, only 10% data is used for training.
 
 ### Generate Dataset
 
