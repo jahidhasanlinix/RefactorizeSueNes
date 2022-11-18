@@ -378,7 +378,7 @@ def mutate_switch(pair, vocab, method, neg_pos_ratio, sent_end):
     
     (_doc, _sum) = pair 
     # split the words and then feed to mutator 
-#    print (_sum)
+    # print (_sum)
     splitted_summary = _sum.split()
 
     ratios = [random.uniform(0, 1) for _ in range(neg_pos_ratio)]

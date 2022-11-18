@@ -52,7 +52,7 @@ num_shards = 1
 # filename nomenclature to save dumped data with labels 
 # e.g., ./cnn_dailymail/cross/{train,validate,test}.tsv
 # Set as "None" (a str, not Nonetype) if you do not wanna dump but use in memory 
-dump_to="'../data/'+dataset_name + '/' + method + '/'+split+'.tsv'"  
+dump_to="'../exp/data/'+dataset_name + '/' + method + '/'+split+'.tsv'"  
 # dump_to = "None"
 
 # whether to save samples as variables in the memory 
