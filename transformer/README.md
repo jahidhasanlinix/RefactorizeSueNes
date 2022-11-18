@@ -4,7 +4,7 @@ mentioned in this [paper](https://aclanthology.org/2022.naacl-main.175/).
 
 ## Environmet Setup
 - `https://github.com/jahidhasanlinix/RefactorizeSueNes.git`
-- `cd SueNes`
+- `cd RefactorizeSueNes`
 - `python3 -m venv .venv`
 - `source .venv/bin/activate`
 - `pip install -r requirements.txt`
