@@ -17,8 +17,8 @@ dataset_sizes = {
 }
 
 dataset_sizes_w_split = {# new for sentence-level mutation
-    "cnn_dailymail":{'train':287113, 'test':11490, 'validation': 13368},
-    "big_patent":{'train':1207222, 'test':67072, 'validation': 67068},
+    "cnn_dailymail":{'train':28711, 'test':1149, 'validation': 1336}, # 10%
+    "big_patent":{'train':120722, 'test':6707, 'validation': 6706}, # 10%
 }
 
 #======== data loading parameters 

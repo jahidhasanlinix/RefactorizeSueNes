@@ -1,5 +1,0 @@
-cnn_dailymail_suenes/validation.tsv filter=lfs diff=lfs merge=lfs -text
-cnn_dailymail_suenes/test.tsv filter=lfs diff=lfs merge=lfs -text
-cnn_dailymail_suenes/train.tsv filter=lfs diff=lfs merge=lfs -text
-hf_model/pt_model_checkpoint/pytorch_model.bin filter=lfs diff=lfs merge=lfs -text
-hf_model/tf_model_checkpoint/tf_model.h5 filter=lfs diff=lfs merge=lfs -text

@@ -11,7 +11,12 @@ mentioned in this [paper](https://aclanthology.org/2022.naacl-main.175/).
 - `python -m spacy download en_core_web_sm`
 - `pip install transformers datasets scikit-learn`
 - `pip install pyyaml h5py`
+
+## Generate Datasets
 - `mkdir exp exp/data exp/result`
+- `cd pre`
+- `python3 sentence_scramble.py`
+- `python3 sample_generation.py`
 
 ## Bert Tiny CNN Daily Mail TensorFlow
 Code for the model is in `bert_tiny_cnndm_tf.py` file.
@@ -24,7 +29,3 @@ Only `sentence delete` technique, defined in
 is used for data generation.
 From the generated data, only 10% data is used for training.
 
-### Generate Dataset
-
-- `cd pre`
-- `python3 sentence_scramble.py`
