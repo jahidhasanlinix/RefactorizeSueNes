@@ -20,7 +20,7 @@ load_from = "tfds" # "tfds" or "tsv"
 # for computers without TF2 or TFDS only. 
 # If load_from is tsv, no effect. 
 # TODO: get rid of this option as we no longer need it 
-save_tsv = False
+save_tsv = True
 
 # should we scramble the data
 # only effective when load_from is tfds 
