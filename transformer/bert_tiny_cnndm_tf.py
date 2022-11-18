@@ -6,6 +6,7 @@
 # Please read README.md file to learn about data generation.
 # 
 
+import os
 import pandas as pd
 import tensorflow as tf
 from datasets import Dataset
