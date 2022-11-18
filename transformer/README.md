@@ -3,7 +3,7 @@ The datasets were generated using `sentence delete` or `word delete` techniques
 mentioned in this [paper](https://aclanthology.org/2022.naacl-main.175/).
 
 ## Environmet Setup
-- `git clone https://github.com/JobayerAhmmed/SueNes.git`
+- `https://github.com/jahidhasanlinix/RefactorizeSueNes.git`
 - `cd SueNes`
 - `python3 -m venv .venv`
 - `source .venv/bin/activate`
