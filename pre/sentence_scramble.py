@@ -14,20 +14,17 @@ import spacy
 import tensorflow_datasets as tfds
 
 import time
+import logging # todo: remove this
 
 from sample_generation import auto_escape, replace_special_character, normalize_sentence
 
 def split_pairs(pairs, tokenizer_name="spacy", spacy_batch_size=2**10, n_jobs= 4):
     """For each pair, return the summary as a list of strings 
-
     tokenizer_name: str, "spacy", "stanza", or "nltk"
     Spacy is about 4 times faster than Stanza --- not fully saturated CPU
-
     Process-level parallelism impossible with Stanza
     # AttributeError: Can't pickle local object 'CNNClassifier.__init__.<locals>.<lambda>'
-
     FIXME: interestingly, spacy_batch_size and n_jobs have little effect on Spacy's speed
-
     Examples
     -------------
     >>> split_pairs([("iam ahjppy asf.","fsd. sdf.fsd. fsd. f")])
@@ -92,14 +89,11 @@ def split_pairs(pairs, tokenizer_name="spacy", spacy_batch_size=2**10, n_jobs= 4
 
 def mutate(pairs, method, dumpfile, neg_pos_ratio, mode='len',debug=False):
     """Central method for delete and replace
-
     The mutation step is much faster than sentence segmentation.
     E.g., 0.005 second vs 3 seconds. 
     So it's not parallelized. 
-
     How the code works by taking as much matrix operation as possible
     ---------------------------------------------------------------------
-
     >>> delete_ratios =numpy.array([[0.1, 0.4, 0.8], [0.2, 0.5, 0.7]])
     >>> lengths_summaries=[4, 10]                
     >>> delete_numbers = numpy.einsum("ij, i->ij", delete_ratios, lengths_summaries)
@@ -119,9 +113,7 @@ def mutate(pairs, method, dumpfile, neg_pos_ratio, mode='len',debug=False):
      array([1, 6, 6, 9, 3]),
      array([0, 7, 8, 6, 2, 2, 8])]]
     
-
     https://stackoverflow.com/questions/40034993/how-to-get-element-wise-matrix-multiplication-hadamard-product-in-numpy
-
     Examples 
     -------------
     >>> sentence_scramble.mutate([("doc1", [str(i) for i in  range(10) ] ), ('doc2', [str(i) for i in  range(10,20)])],  "sent_delete", "/dev/null", 3)
@@ -137,7 +129,6 @@ def mutate(pairs, method, dumpfile, neg_pos_ratio, mode='len',debug=False):
       '10 11 13 14 16 17 18 19',   0.8
      ]
     ]
-
     >>> sentence_scramble.mutate([("doc1", [str(i) for i in  range(10) ] ), ('doc2', [str(i) for i in  range(10,20)])],  "sent_replace", "/dev/null", 3)
     [['doc1',
       '0 1 2 3 4 5 6 7 8 9',    1.0,
@@ -151,7 +142,6 @@ def mutate(pairs, method, dumpfile, neg_pos_ratio, mode='len',debug=False):
       '8 4 3 13 14 15 16 2 9 7',    0.4
      ]
     ]
-
     """
 
     print ("Mutating", end="...")
@@ -220,9 +210,11 @@ def generate_one(dataset_name, split, features, methods, neg_pos_ratio, load_sta
     """
 
     # 1. Load data 
-    dataset = tfds.load(name=dataset_name, download=True, 
-                        split=split+ '[{}:{}]'.format(load_start, load_end)
-                       )
+    dataset = tfds.load(name=dataset_name,
+                        split=split+ '[{}:{}]'.format(load_start, load_end),
+                        download=True,
+                        try_gcs=True # todo: remove this
+                    )
 
     pairs = [(normalize_sentence(piece[features[0]].numpy().decode("utf-8"), special_chars), 
               normalize_sentence(piece[features[1]].numpy().decode("utf-8"), special_chars) )
@@ -247,7 +239,6 @@ def generate_one(dataset_name, split, features, methods, neg_pos_ratio, load_sta
 
 def combine_shuffle(methods, data_root, dataset_name, split, mode):
     """Combine dumped sample files into one file and shuffle
-
     cat train_*.tsv > train.tsv
     rm  train_*.tsv 
     cat test_*.tsv > test.tsv
@@ -256,8 +247,6 @@ def combine_shuffle(methods, data_root, dataset_name, split, mode):
     shuf test.tsv  > test_shuffled.tsv
     head train_shuffled.tsv -n 120722 > train_shuffled_10_percent.tsv
     head test_shuffled.tsv -n 6707 > test_shuffled_10_percent.tsv
-
-
     """
     for method in methods:
         dump_root = os.path.join(data_root, dataset_name, method + "_" +  mode)
@@ -301,4 +290,5 @@ def sample_generation(conf):
 
 
 if __name__ == "__main__":
+    # logging.basicConfig(level=logging.INFO) # todo: remove this
     sample_generation("sentence_conf")
