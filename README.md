@@ -12,8 +12,8 @@ mentioned in the SueNes [paper](https://aclanthology.org/2022.naacl-main.175/).
 You can create virtual environment using Python or Conda.
 
 #### Python venv (CPU Only)
-- `git clone https://github.com/JobayerAhmmed/SueNes.git`
-- `cd SueNes`
+- `git clone https://github.com/jahidhasanlinix/RefactorizeSueNes.git`
+- `cd RefactorizeSueNes`
 - `python3 -m venv .venv`
 - `source .venv/bin/activate`
 - `pip install -r requirements.txt`
