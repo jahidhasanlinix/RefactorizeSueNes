@@ -1,4 +1,7 @@
-# SueNes: A Weakly Supervised Approach to Evaluating Single-Document Summarization via Negative Sampling
+#Project Title: Refactorize SueNes Using HuggingFace Transformer Library​
+
+# Baseline paper:
+#SueNes: A Weakly Supervised Approach to Evaluating Single-Document Summarization via Negative Sampling
 
 [Here is NAACL 2022 paper](https://aclanthology.org/2022.naacl-main.175/)
 
